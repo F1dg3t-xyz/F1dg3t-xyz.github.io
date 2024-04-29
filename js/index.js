@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     checkServerStatus('X');
     checkServerStatus('Y');
-    // checkServerStatus('Z');
+    checkServerStatus('Z');
 });
 
 function checkServerStatus(serverName) {
-    var url = 'http://f1dg3t-' + serverName.toLowerCase() + '.duckdns.org/' + serverName.toLowerCase() + '/index.html';
+    var url = 'http://f1dg3t-' + serverName.toLowerCase() + '.duckdns.org/www/address.txt';
     var serverDiv = document.getElementById('server' + serverName.toUpperCase());
     var statusParagraph = serverDiv.querySelector('.status');
 
-    // Try to fetch the server URL with a GET request
+    // Try to fetch the address.txt file from the server
     fetch(url)
         .then(response => {
             if (response.ok) {

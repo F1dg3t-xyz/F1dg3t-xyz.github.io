@@ -55,19 +55,3 @@ main {
 .status {
     font-size: 1.2em;
 }
-
-#serverZ .status {
-    color: green;
-}
-
-/* CSS for unvisited links */
-.server-link:link {
-    color: white;
-    /* White text color for unvisited links */
-}
-
-/* CSS for visited links */
-.server-link:visited {
-    color: orange;
-    /* Orange text color for visited links */
-}
