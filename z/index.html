@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=http://f1dg3t-z.duckdns.org">
-    <title>Redirecting...</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1dg3t-Y:/ Drive</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
 </head>
+
 <body>
-    <p>If you are not redirected automatically, <a href="http://f1dg3t-z.duckdns.org">click here</a>.</p>
-    <script>
-        window.location.href = "http://f1dg3t-z.duckdns.org";
-    </script>
+    <header>
+        <h1>Welcome to F1dg3t-Z:/ Drive</h1>
+    </header>
+    <main>
+        <p>This is F1dg3t's old portable drive.</p>
+        <a href="mailto:dramaticrobotic@icloud.com">Contact Host</a>
+        <div id="audioInfo"></div> <!-- New element to display audio file name -->
+        <div id="waveform"></div>
+        <div id="controls">
+            <button id="playPauseBtn">Play</button>
+            <button id="stopBtn">Stop</button>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+        </div>
+    </main>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
