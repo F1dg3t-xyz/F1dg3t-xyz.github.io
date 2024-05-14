@@ -1,26 +1,21 @@
-document.addEventListener("DOMContentLoaded", function() {
-    checkServerStatus('X');
-    checkServerStatus('Y');
-    checkServerStatus('Z');
-});
-
-function checkServerStatus(serverName) {
-    var url = 'http://f1dg3t-' + serverName.toLowerCase() + '.duckdns.org/www/address.txt';
-    var serverDiv = document.getElementById('server' + serverName.toUpperCase());
-    var statusParagraph = serverDiv.querySelector('.status');
-
-    // Try to fetch the address.txt file from the server
-    fetch(url)
-        .then(response => {
-            if (response.ok) {
-                statusParagraph.textContent = 'Online';
-                statusParagraph.style.color = 'green';
-            } else {
-                throw new Error('Network response was not ok');
+window.onload = function() {
+    // Fetch server statuses from server-side script
+    fetch('server-status.php')
+        .then(response => response.json())
+        .then(statuses => {
+            // Update server visuals based on status
+            for (const server in statuses) {
+                const status = statuses[server];
+                const serverElement = document.getElementById(`server${server}`);
+                if (serverElement) {
+                    serverElement.querySelector('.status').textContent = status;
+                    if (status === 'Online') {
+                        serverElement.style.backgroundColor = 'lightgreen';
+                    } else {
+                        serverElement.style.backgroundColor = 'lightcoral';
+                    }
+                }
             }
         })
-        .catch(error => {
-            statusParagraph.textContent = 'Offline';
-            statusParagraph.style.color = 'red';
-        });
-}
+        .catch(error => console.error('Error fetching server statuses:', error));
+};
