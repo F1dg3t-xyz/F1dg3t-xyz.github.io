@@ -1,57 +1,254 @@
-/* Reset styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    background-color: #121212;
+    color: white;
     font-family: Arial, sans-serif;
-    background-color: #222;
-    /* Dark background color */
-    color: #eee;
-    /* Light text color */
-    overflow: hidden;
-    /* Prevent scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
-header {
-    background-color: #333;
-    /* Dark header background color */
+.container {
+    max-width: 800px;
+    width: 100%;
     padding: 20px;
-    text-align: center;
 }
 
-h1 {
-    font-size: 2em;
+.ipBox {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+    max-width: fit-content;
+    /* Adjust width to fit content */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-main {
+pre {
+    margin: 0;
+}
+
+code {
+    color: #dcdcdc;
+    font-family: Consolas, 'Courier New', monospace;
+    display: block;
+    white-space: pre;
+}
+
+.copy-button {
+    position: absolute;
+    top: 50%;
+    right: -150px;
+    /* Adjust as needed */
+    transform: translateY(-50%);
+    background: #3a3a3a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.copy-button:hover {
+    background: #555555;
+}
+
+.main-content {
     display: flex;
     flex-direction: column;
-    /* Align children vertically */
-    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
-    /* Set height to 100% of viewport height */
-    overflow: hidden;
-    /* Prevent scrolling */
+    justify-content: center;
 }
 
-.server {
-    margin: 20px;
-    padding: 20px;
-    background-color: #444;
-    /* Dark server background color */
-    border-radius: 10px;
+/* Existing CSS */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.bg-zinc-100 {
+    background-color: #2e2e2e;
+}
+
+.dark .bg-zinc-900 {
+    background-color: #1a202c;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.bg-dark {
+    background-color: #000000;
+}
+
+.dark .bg-zinc-800 {
+    background-color: #2d3748;
+}
+
+.shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.opacity-30 {
+    opacity: 0.3;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.text-center {
     text-align: center;
 }
 
-.server h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.text-5xl {
+    font-size: 3rem;
 }
 
-.status {
-    font-size: 1.2em;
+.text-white {
+    color: #ffffff;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.bg-black {
+    background-color: #000000;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.text-zinc-600 {
+    color: #718096;
+}
+
+.dark .text-zinc-300 {
+    color: #000000;
+}
+
+.space-x-4> :not([hidden])~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(1rem * var(--tw-space-x-reverse));
+    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.icon-social {
+    width: 5vw;
 }
